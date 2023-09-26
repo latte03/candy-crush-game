@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/logo.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vue3-template</title>
+    <style>
+      html,
+      body {
+        position: fixed;
+        height: 100% !important;
+        padding: 0;
+        margin: 0;
+        overflow: hidden !important;
+        background-color: #fff;
+      }
+
+      body::after {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1000;
+        width: 70px;
+        height: 70px;
+        margin: -35px 0 0 -35px;
+        pointer-events: none;
+        content: '';
+        border: 5px solid rgb(250 204 21 / 50%);
+        border-right-color: rgb(250 204 21);
+        border-radius: 50%;
+        transition: opacity 0.3s;
+        animation: rotateCircle 0.7s linear infinite forwards;
+      }
+
+      @keyframes rotateCircle {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      body.loaded::after {
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
-

@@ -30,7 +30,8 @@ module.exports = defineConfig({
     }
   },
   globals: {
-    defineOptions: 'readonly'
+    defineOptions: 'readonly',
+    __PIXI_APP__: 'writable'
   },
   rules: {
     // Prettier
