@@ -3,6 +3,7 @@ import 'uno.css'
 import './style/index.less'
 
 import { app } from './app'
+import { HomeScreen } from './screens/HomeScreen'
 import { LoadScreen } from './screens/LoadScreen'
 import { TiledBackground } from './ui/Background'
 import { initAssets } from './utils/assets'
@@ -51,6 +52,8 @@ async function init() {
 
   // Show initial loading screen
   await navigation.showScreen(LoadScreen)
+
+  navigation.showScreen(HomeScreen)
 }
 
 init()
